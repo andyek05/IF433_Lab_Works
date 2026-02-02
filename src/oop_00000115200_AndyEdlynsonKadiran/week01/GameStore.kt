@@ -18,5 +18,6 @@ fun printReceipt(title: String, finalPrice: Int) {
     println("===== RECEIPT =====")
     println("Game Title : $title")
     println($$"Final Price: $$$finalPrice")
+    println("Note       : ${note ?: "Tidak ada catatan"}")
 }
 
