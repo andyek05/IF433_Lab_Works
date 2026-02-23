@@ -1,24 +1,27 @@
 package oop_00000115200_AndyEdlynsonKadiran.week03
 
-class Player(val name: String){
-    private var xp: Int = 0
+class Player(val username: String){
+    private var xp: Int = 100
 
-    fun levelCalculation(){
+    fun levelCalculation(): Int {
         var level: Int = 0
         level = (xp / 100) + 1
+        return level
     }
 
     fun addXp(amount: Int) {
         if (amount < 0) {
             println("ERROR: XP is negative. Please enter Positive amount.")
         } else {
-            var levelBefore = levelCalculation()
+            val levelBefore = levelCalculation()
 
             xp = xp + amount
-            var levelAfter= levelCalculation()
+            val levelAfter= levelCalculation()
 
-            if (levelBefore < levelAfter){
-                println( "Level Up! Selamat $name naik ke level $levelAfter")
+            if (levelAfter > levelBefore){
+                println("Level Up! Selamat $username naik ke level $levelAfter")
+            } else {
+                println("Player Level is $levelBefore")
             }
         }
     }
