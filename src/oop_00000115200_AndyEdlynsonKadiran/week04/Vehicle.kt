@@ -1,6 +1,6 @@
 package oop_00000115200_AndyEdlynsonKadiran.week04
 
-open class `Vehicle.kt`(val brand: String) {
+open class Vehicle(val brand: String) {
     var speed: Int = 0
 
     open fun accelerate() {
