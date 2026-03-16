@@ -15,4 +15,23 @@ fun main() {
 
         println("----------------------------------------------")
     }
+
+    println("=== PROSES PEMBAYARAN DENGAN SMART CASTING ===")
+
+    for (metode in daftarPembayaran) {
+        println("Memproses akun: ${metode.accountName}")
+
+        metode.processPayment(75000.0)
+
+        if (metode is EWallet) {
+            println("[Sistem Detect: Ini adalah EWallet. Melakukan Top-up Otomatis...]")
+
+            metode.topUp(50000.0)
+
+            println("Mencoba pembayaran ulang setelah Top-up:")
+            metode.processPayment(75000.0)
+        }
+
+        println("----------------------------------------------")
+    }
 }
