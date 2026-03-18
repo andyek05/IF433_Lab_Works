@@ -6,4 +6,13 @@ fun main() {
     GameManager.startGame()
 
     GameManager.startGame()
+
+    println("\n=== TEST ENUM & FACTORY ===")
+    println("Peluang mendapatkan item LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+
+    val myWeapon = Weapon.forgeStarterSword()
+
+    println("Senjata Baru Didapatkan: ${myWeapon.item.name}")
+    println("Statistik -> Damage: ${myWeapon.item.damage}, Durability: ${myWeapon.durability}")
+    println("Kelangkaan: ${myWeapon.item.rarity}")
 }
