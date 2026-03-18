@@ -15,4 +15,13 @@ fun main() {
     println("Senjata Baru Didapatkan: ${myWeapon.item.name}")
     println("Statistik -> Damage: ${myWeapon.item.damage}, Durability: ${myWeapon.durability}")
     println("Kelangkaan: ${myWeapon.item.rarity}")
+
+    println("\n=== SIMULASI UPGRADE & BATTLE EVENTS ===")
+
+    val upgradedSword = myWeapon.item.copy(name = "Pedang Kayu Perkasa", damage = 25)
+
+    processEvent(SafeZone)
+    processEvent(MonsterEncounter("Goblin Nakal"))
+    processEvent(LootDropped(upgradedSword))
+    processEvent(GameOver("Terkena jebakan racun"))
 }
