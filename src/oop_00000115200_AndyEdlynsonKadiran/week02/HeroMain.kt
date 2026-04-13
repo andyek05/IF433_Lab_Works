@@ -49,4 +49,10 @@ fun main() {
         }
         println()
     }
+
+    if (isHeroAlive == true){
+        println("$name has won the battle!!!")
+    }else{
+        println("$name has been defeated.")
+    }
 }
