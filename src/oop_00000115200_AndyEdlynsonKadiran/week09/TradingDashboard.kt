@@ -50,4 +50,16 @@ fun main() {
 
     println("\n--- Unique Trading Pairs ---")
     println(uniquePairs)
+
+    println("\n" + "=".repeat(35))
+    println("=== CRYPTO TRADING DASHBOARD ===")
+    println("=".repeat(35))
+
+    println("\n[TOP PROFITS]")
+    topPerformersString.forEach { line ->
+        println(line)
+    }
+
+    println("\n" + "=".repeat(35))
+    println("Dashboard Updated: 2026-04-20")
 }
