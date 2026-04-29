@@ -15,4 +15,8 @@ fun main() {
     println("--- Data Log Perdagangan Berhasil Dimuat ---")
     tradeHistory.forEach { println(it) }
 
+    val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
+
+    println("\n--- Closed Trades Only ---")
+    closedTrades.forEach { println(it) }
 }
