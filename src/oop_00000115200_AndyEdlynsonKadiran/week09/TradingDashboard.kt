@@ -29,4 +29,13 @@ fun main() {
 
     println("\n--- Losing Trades (ROE <= 0) ---")
     losingTrades.forEach { println(it) }
+
+    val topPerformersString = winningTrades
+        .sortedByDescending { it.roe }
+        .map { "WIN [${it.pair} - ${it.position}]: +${it.roe}% ROE (Lev: ${it.leverage}x)" }
+
+    println("\n--- Top Performers ---")
+    topPerformersString.forEach { println(it) }
+
+
 }
