@@ -19,4 +19,9 @@ fun main() {
 
     println("\n--- Closed Trades Only ---")
     closedTrades.forEach { println(it) }
+
+    val winningTrades = closedTrades.filter { it.roe > 0 }
+
+    println("\n--- Winning Trades (ROE > 0) ---")
+    winningTrades.forEach { println(it) }
 }
