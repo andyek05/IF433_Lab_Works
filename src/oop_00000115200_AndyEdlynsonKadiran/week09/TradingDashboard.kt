@@ -62,4 +62,16 @@ fun main() {
 
     println("\n" + "=".repeat(35))
     println("Dashboard Updated: 2026-04-20")
+
+    println("\n[WORST LOSSES]")
+    worstPerformersString.forEach { line ->
+        println(line)
+    }
+
+    // Menampilkan Unique Trading Pairs
+    println("\n[ASSET COVERAGE]")
+    println("Pairs traded: $uniquePairs")
+
+    println("\n" + "=".repeat(35))
+    println("END OF REPORT")
 }
