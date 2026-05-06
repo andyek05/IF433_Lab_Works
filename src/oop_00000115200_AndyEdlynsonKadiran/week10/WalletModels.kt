@@ -1,9 +1,13 @@
 package oop_00000115200_AndyEdlynsonKadiran.week10
 
+interface NamedEntity {
+    val name: String
+}
+
 data class Coin(
-    val name: String,
+    override val name: String,
     val balance: Double
-)
+) : NamedEntity
 
 data class Transaction(
     val id: String,
