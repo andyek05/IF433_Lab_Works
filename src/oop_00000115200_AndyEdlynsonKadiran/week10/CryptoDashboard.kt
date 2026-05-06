@@ -28,6 +28,24 @@ fun main() {
         status = "200 OK",
         data = btc
     )
+
     println("\nStatus API: ${response.status}")
     println("Data dari API: ${response.data.name}")
+
+    coinRepo.add(Coin("BTC", 0.1254))
+    coinRepo.add(Coin("ETH", 2.5))
+    coinRepo.add(Coin("USDT", 1500.0))
+
+    coinRepo.add(Coin("SOL", 10.0))
+
+    println("=== My Crypto Wallet ===")
+    val allCoins = coinRepo.getAll()
+
+    allCoins.forEachIndexed { index, coin ->
+        println("${index + 1}. Asset: ${coin.name} | Balance: ${coin.balance}")
+    }
+
+    println("\n--- Melakukan Pencarian Asset 'BTC' ---")
+    val search = coinRepo.findByName("BTC")
+    search.forEach { println("Hasil ditemukan: ${it.name} dengan saldo ${it.balance}") }
 }
