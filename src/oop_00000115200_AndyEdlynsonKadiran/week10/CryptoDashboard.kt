@@ -48,4 +48,13 @@ fun main() {
     println("\n--- Melakukan Pencarian Asset 'BTC' ---")
     val search = coinRepo.findByName("BTC")
     search.forEach { println("Hasil ditemukan: ${it.name} dengan saldo ${it.balance}") }
+
+    val responseAllCoins = ApiResponse("200 OK", coinRepo.getAll())
+
+    println("\n=== Simulasi Respon API (Full Data) ===")
+    println("Status: ${responseAllCoins.status}")
+
+    responseAllCoins.data.forEach { coin ->
+        println("Fetching dari API Wrapper -> Asset: ${coin.name}, Saldo: ${coin.balance}")
+    }
 }
