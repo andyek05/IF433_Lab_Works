@@ -12,7 +12,9 @@ data class Coin(
 data class Transaction(
     val id: String,
     val amount: Double
-)
+) : NamedEntity {
+    override val name: String get() = id
+}
 
 data class SystemLog(
     val timestamp: Long,
