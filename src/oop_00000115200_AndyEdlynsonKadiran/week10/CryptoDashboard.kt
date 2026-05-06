@@ -57,4 +57,11 @@ fun main() {
     responseAllCoins.data.forEach { coin ->
         println("Fetching dari API Wrapper -> Asset: ${coin.name}, Saldo: ${coin.balance}")
     }
+
+    println("=== Dashboard Response API ===")
+    println("Status: ${responseAllCoins.status}")
+
+    responseAllCoins.data.forEach { coin ->
+        println("Aset: ${coin.name} | Saldo: ${coin.balance}")
+    }
 }
