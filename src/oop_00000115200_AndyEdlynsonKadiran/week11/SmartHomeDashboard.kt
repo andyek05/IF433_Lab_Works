@@ -34,4 +34,9 @@ fun main() {
         val diagnosticLog = it.diagnose()
         println(diagnosticLog)
     }
+
+    with(homeDevices) {
+        println("=== RANGKUMAN SISTEM SMART HOME ===")
+        println("Total perangkat yang terdaftar: ${this.size} perangkat.")
+    }
 }
