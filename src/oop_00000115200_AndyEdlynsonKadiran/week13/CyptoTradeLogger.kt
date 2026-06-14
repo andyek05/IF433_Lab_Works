@@ -63,4 +63,12 @@ fun main() {
 
     File(filePath).appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
     println("Simulasi: Berhasil menyisipkan baris data cacat ke dalam berkas untuk uji keandalan.")
+
+    val loadedData = loadTrades(filePath)
+
+    val totalPnL = loadedData.sumOf { it.pnl }
+
+    println("=== TRADING DASHBOARD RECAP ===")
+    println("Total Transaksi Berhasil Dimuat : ${loadedData.size} posisi")
+    println("Total PnL Bersih                : $totalPnL USDT")
 }
