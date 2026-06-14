@@ -12,3 +12,22 @@ data class TradeRecord(
 )
 
 fun TradeRecord.toCsv(): String = "$id,$symbol,$type,$margin,$pnl"
+
+fun fromCsvTrade(line: String): TradeRecord? {
+    return try {
+        val parts = line.split(",")
+        // Memastikan jumlah elemen pas (harus ada 5 kolom)
+        if (parts.size != 5) return null
+
+        TradeRecord(
+            id = parts[0].trim().toInt(),
+            symbol = parts[1].trim(),
+            type = parts[2].trim(),
+            margin = parts[3].trim().toDouble(),
+            pnl = parts[4].trim().toDouble()
+        )
+    } catch (e: Exception) {
+        // Jika gagal parsing angka (NumberFormatException) atau error lainnya, kembalikan null
+        null
+    }
+}
