@@ -21,6 +21,21 @@ class BadOrderProcessor {
     }
 }
 
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+    fun getCustomerType(): String
+}
+
+class RegularPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price
+    override fun getCustomerType(): String = "REGULAR"
+}
+
+class VipPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price * 0.90
+    override fun getCustomerType(): String = "VIP"
+}
+
 interface OrderRepository {
     fun saveOrder(itemName: String, finalPrice: Double, customerType: String)
 }
@@ -51,7 +66,6 @@ class SafeOrderProcessor(
     private val notifier: NotificationService
 ) {
     fun processOrder(itemName: String, basePrice: Double, customerType: String) {
-        // Logika penghitungan diskon (Sementara masih berbasis when bawaan modul)
         val finalPrice = when (customerType) {
             "VIP" -> basePrice * 0.90
             else -> basePrice
