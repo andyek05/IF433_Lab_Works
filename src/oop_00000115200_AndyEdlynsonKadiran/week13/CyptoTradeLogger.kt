@@ -60,4 +60,7 @@ fun main() {
 
     saveTrades(mockTrades, filePath)
     println("Simulasi: $filePath berhasil dibuat dengan ${mockTrades.size} data trade awal.")
+
+    File(filePath).appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
+    println("Simulasi: Berhasil menyisipkan baris data cacat ke dalam berkas untuk uji keandalan.")
 }
