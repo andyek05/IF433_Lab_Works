@@ -45,4 +45,9 @@ fun main() {
     }
 
     println("Total Beban Daya Listrik: $totalPower Watt")
+
+    println("\n=== DETAIL DIAGNOSTIK PERANGKAT ===")
+    homeDevices.forEach { device ->
+        println(device.diagnose())
+    }
 }
