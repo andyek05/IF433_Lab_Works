@@ -27,7 +27,7 @@ fun fromCsvTrade(line: String): TradeRecord? {
             pnl = parts[4].trim().toDouble()
         )
     } catch (e: Exception) {
-        // Jika gagal parsing angka (NumberFormatException) atau error lainnya, kembalikan null
+        println("(Log) Data korup diabaikan: $line")
         null
     }
 }
